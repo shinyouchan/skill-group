@@ -34,5 +34,11 @@ module.exports = {
             new TerserWebpackPlugin(),
             new CssMinimizerPlugin()
         ]
+    },
+    devServer: {
+        host: 'localhost',
+        port: 8000,
+        open : true,
+        watchFiles: ' index.html'
     }
 }
