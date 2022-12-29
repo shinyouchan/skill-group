@@ -41,5 +41,13 @@ export class Keyboard {
         this.#inputEl.addEventListener('input', (e) => {
             e.target.value = e.target.value.replace(/[ㄱ-ㅎ| ㅏ-ㅣ | 가-힣]/ , '')
         })
+        this.#keyboardEl.addEventListener('mousedown' , (e) => {
+            e.target.closest('div.key')?.classList.add('active')
+
+        })
+        document.addEventListener('mouseup', (e) => {
+            this.#keyboardEl.querySelector('.active')?.classList.remove('active')
+        })
+        
     }
 }
